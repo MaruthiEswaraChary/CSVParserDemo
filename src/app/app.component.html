@@ -1,0 +1,29 @@
+<div class="container">
+  <div style="align-content: center">
+    <h1>Upload csv file</h1>
+  </div>
+  <div style="align-content: center">
+  <div>
+<input type='file' accept='text/plain' multiple (change)='openFile($event)'>
+</div>
+<div><button (click)="submitFile()">Submit</button></div>
+</div>
+<div *ngIf = "multi.length>0">
+<ngx-charts-line-chart
+[view]="view"
+
+[results]="multi"
+[gradient]="gradient"
+[xAxis]="showXAxis"
+[yAxis]="showYAxis"
+[legend]="showLegend"
+[showXAxisLabel]="showXAxisLabel"
+[showYAxisLabel]="showYAxisLabel"
+[xAxisLabel]="xAxisLabel"
+[yAxisLabel]="yAxisLabel"
+[autoScale]="autoScale"
+>
+<!-- (select)="onSelect($event)" -->
+</ngx-charts-line-chart>
+</div>
+</div>
